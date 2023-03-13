@@ -5,6 +5,7 @@ import com.example.demo.model.Tour;
 import com.example.demo.repositoriy.ClientRepository;
 import com.example.demo.repositoriy.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,8 @@ public class MainController {
         List<Client> clients = clientRepository.findAll();
         return ResponseEntity.ok(clients);
     }
-    @GetMapping("/tr")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/getAllTours")
     public ResponseEntity<List<Tour>> getAllTours() {
         List<Tour> clients = tourRepository.findAll();
         return ResponseEntity.ok(clients);

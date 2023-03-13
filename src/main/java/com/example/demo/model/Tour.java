@@ -20,4 +20,8 @@ public class Tour {
     @Column(name = "day_cost")
     private Integer dayCost;
 
+    @Column(name = "image")
+    private String image;
+    @Column(name = "description")
+    private String description;
 }
