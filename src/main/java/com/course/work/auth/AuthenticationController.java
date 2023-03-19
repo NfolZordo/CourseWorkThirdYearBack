@@ -35,7 +35,7 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(service.authenticate(request));
   }
-  @GetMapping("/getUser")
+  @PostMapping("/getUser")
   public ResponseEntity<UserDto> getUser(@RequestHeader("Authorization") String token) {
     User user;
     try {
