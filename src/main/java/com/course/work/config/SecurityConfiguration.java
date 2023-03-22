@@ -35,7 +35,7 @@ public class SecurityConfiguration {
         .csrf()
         .disable()
         .authorizeHttpRequests()
-        .requestMatchers("/api/auth/**","/api/info/getAllTours")
+        .requestMatchers("/api/auth/**","/swagger-ui/**","/api/info/getAllTours")
         .permitAll()
         .requestMatchers(HttpMethod.POST,"/api/auth/**")
         .permitAll()
