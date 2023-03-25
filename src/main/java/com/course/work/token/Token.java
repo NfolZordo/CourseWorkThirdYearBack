@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigInteger;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,7 +18,7 @@ public class Token {
 
   @Id
   @GeneratedValue
-  public Integer id;
+  public Long id;
 
   @Column(unique = true)
   public String token;

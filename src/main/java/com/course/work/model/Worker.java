@@ -1,5 +1,6 @@
 package com.course.work.model;
 
+import com.course.work.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,4 +31,7 @@ public class Worker {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

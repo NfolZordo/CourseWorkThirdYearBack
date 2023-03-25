@@ -1,5 +1,6 @@
 package com.course.work.model;
 
+import com.course.work.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,5 +23,9 @@ public class Client {
 
     @Column(name = "phone_number")
     private Integer phoneNumber;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

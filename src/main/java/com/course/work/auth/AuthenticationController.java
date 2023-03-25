@@ -1,9 +1,7 @@
 package com.course.work.auth;
 
 import com.course.work.config.JwtService;
-import com.course.work.user.User;
-import com.course.work.user.UserDto;
-import com.course.work.user.UserRepository;
+import com.course.work.user.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +20,7 @@ public class AuthenticationController {
   private final UserRepository userRepository;
 
 
+
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
           @RequestBody RegisterRequest request
@@ -36,15 +35,11 @@ public class AuthenticationController {
     return ResponseEntity.ok(service.authenticate(request));
   }
   @PostMapping("/getUser")
-  public ResponseEntity<UserDto> getUser(@RequestHeader("Authorization") String token) {
-    User user;
-    try {
-      String userEmail = jwtService.extractUsername(token.substring(7));
-      user = userRepository.findByEmail(userEmail)
-              .orElseThrow();
-    } catch (Exception e) {
-      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-    }
-    return ResponseEntity.ok(new UserDto(user));
+  public ResponseEntity<AllUserInfo> getUser(@RequestHeader("Authorization") String token) {
+    AllUserInfo user;
+    String userEmail = jwtService.extractUsername(token.substring(7));
+    Object[] source = userRepository.getUserInfo(userEmail);
+    AllUserInfo userInfo = AllUserInfoConverter.convert((Object[])source[0]);
+    return ResponseEntity.ok(userInfo);
   }
 }
