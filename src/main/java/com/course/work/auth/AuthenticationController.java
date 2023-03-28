@@ -3,12 +3,8 @@ package com.course.work.auth;
 import com.course.work.config.JwtService;
 import com.course.work.user.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -18,8 +14,6 @@ public class AuthenticationController {
   private final AuthenticationService service;
   private final JwtService jwtService;
   private final UserRepository userRepository;
-
-
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
