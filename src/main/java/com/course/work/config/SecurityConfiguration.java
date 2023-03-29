@@ -1,6 +1,7 @@
 package com.course.work.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -28,12 +29,17 @@ public class SecurityConfiguration {
   private final JwtAuthenticationFilter jwtAuthFilter;
   private final AuthenticationProvider authenticationProvider;
   private final LogoutHandler logoutHandler;
+//    @Autowired
+//    private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
         .csrf()
         .disable()
+//            .exceptionHandling()
+//            .authenticationEntryPoint(restAuthenticationEntryPoint)
+//            .and()
         .authorizeHttpRequests()
         .requestMatchers("/api/auth/**","/swagger-ui/**","/api/info/getAllTours")
         .permitAll()

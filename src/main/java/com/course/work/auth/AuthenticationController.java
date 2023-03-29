@@ -2,6 +2,7 @@ package com.course.work.auth;
 
 import com.course.work.config.JwtService;
 import com.course.work.user.*;
+import io.jsonwebtoken.ExpiredJwtException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,6 @@ public class AuthenticationController {
   }
   @PostMapping("/getUser")
   public ResponseEntity<AllUserInfo> getUser(@RequestHeader("Authorization") String token) {
-    AllUserInfo user;
     String userEmail = jwtService.extractUsername(token.substring(7));
     Object[] source = userRepository.getUserInfo(userEmail);
     AllUserInfo userInfo = AllUserInfoConverter.convert((Object[])source[0]);

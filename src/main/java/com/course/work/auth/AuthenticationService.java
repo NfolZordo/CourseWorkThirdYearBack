@@ -24,7 +24,6 @@ public class AuthenticationService {
 
   public AuthenticationResponse register(RegisterRequest request) {
 
-//    Integer newUserId = repository.addClient("Test", "Testovich", 123456789, "test@test", "testtest");
     var password = passwordEncoder.encode(request.getPassword());
     var userId = repository.addClient(request.getFirstname(), request.getLastname(), request.getPhoneNumber(), request.getEmail(), password);
     var user = User.builder()
@@ -33,7 +32,6 @@ public class AuthenticationService {
         .password(password)
         .role(Role.USER)
         .build();
-//    var savedUser = repository.save(user);
     var jwtToken = jwtService.generateToken(user);
     saveUserToken(user, jwtToken);
     return AuthenticationResponse.builder()
