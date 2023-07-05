@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  db:
+    image: postgres
+    environment:
+      SERVER_PORT: 8080
+      DB_URL: jdbc:postgresql://localhost:5433/travel_agency
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: travel_agency
+      DB_DRIVER: org.postgresql.Driver
+    ports:
+      - "5433:5433"
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/travel_agency
+      DB_DRIVER: org.postgresql.Driver
+    ports:
+      - "8080:8080"
