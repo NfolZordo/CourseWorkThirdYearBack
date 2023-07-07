@@ -1,4 +1,4 @@
-package com.course.work.token;
+package com.course.work.enums;
 
 public enum TokenType {
   BEARER

@@ -24,14 +24,9 @@ public class Order {
     @JoinColumn(name = "tour_id", nullable = false)
     private Tour tour;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "worker_id", nullable = false)
-    private Worker worker;
-
     @Column(name = "data_order")
     private LocalDate dataOrder;
 
     @Column(name = "number_days")
     private Integer numberDays;
-
 }

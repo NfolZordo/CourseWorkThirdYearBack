@@ -1,4 +1,4 @@
-package com.course.work.user;
+package com.course.work.enums;
 
 public enum Role {
 

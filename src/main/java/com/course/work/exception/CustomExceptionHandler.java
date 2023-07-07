@@ -38,18 +38,4 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         log.error("JWT token has expired");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("JWT token has expired");
     }
-//    @Override
-//    public ResponseEntity<Object> handleException(Exception ex, WebRequest request) {
-//        if (ex instanceof ExpiredJwtException) {
-//            return handleExpiredJwtException((ExpiredJwtException) ex, request);
-//        }
-//        // обробка інших помилок
-//        return super.handleException(ex, request);
-//    }
-//
-//    private ResponseEntity<Object> handleExpiredJwtException(ExpiredJwtException ex, WebRequest request) {
-//        // код для обробки помилки ExpiredJwtException
-//        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("JWT token has expired");
-//    }
-
 }

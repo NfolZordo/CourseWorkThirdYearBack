@@ -1,5 +1,6 @@
-package com.course.work.token;
+package com.course.work.repositoriy;
 
+import com.course.work.model.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

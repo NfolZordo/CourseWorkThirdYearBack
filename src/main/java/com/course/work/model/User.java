@@ -1,6 +1,6 @@
-package com.course.work.user;
+package com.course.work.model;
 
-import com.course.work.token.Token;
+import com.course.work.enums.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

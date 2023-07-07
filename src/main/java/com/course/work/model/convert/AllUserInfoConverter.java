@@ -1,6 +1,6 @@
-package com.course.work.user;
+package com.course.work.model.convert;
 
-import org.springframework.core.convert.converter.Converter;
+import com.course.work.model.AllUserInfo;
 
 public class AllUserInfoConverter {
 

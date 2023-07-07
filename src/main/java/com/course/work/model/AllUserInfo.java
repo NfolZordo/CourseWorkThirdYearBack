@@ -1,4 +1,4 @@
-package com.course.work.user;
+package com.course.work.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

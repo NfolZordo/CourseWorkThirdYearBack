@@ -1,6 +1,5 @@
 package com.course.work.model;
 
-import com.course.work.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

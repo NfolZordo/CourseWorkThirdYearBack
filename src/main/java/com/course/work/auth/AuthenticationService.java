@@ -1,12 +1,12 @@
 package com.course.work.auth;
 
 import com.course.work.config.JwtService;
-import com.course.work.token.Token;
-import com.course.work.token.TokenRepository;
-import com.course.work.token.TokenType;
-import com.course.work.user.Role;
-import com.course.work.user.User;
-import com.course.work.user.UserRepository;
+import com.course.work.model.Token;
+import com.course.work.repositoriy.TokenRepository;
+import com.course.work.enums.TokenType;
+import com.course.work.enums.Role;
+import com.course.work.model.User;
+import com.course.work.repositoriy.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

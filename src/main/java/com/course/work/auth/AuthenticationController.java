@@ -1,8 +1,9 @@
 package com.course.work.auth;
 
 import com.course.work.config.JwtService;
-import com.course.work.user.*;
-import io.jsonwebtoken.ExpiredJwtException;
+import com.course.work.model.AllUserInfo;
+import com.course.work.model.convert.AllUserInfoConverter;
+import com.course.work.repositoriy.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

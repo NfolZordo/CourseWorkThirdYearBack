@@ -1,6 +1,6 @@
 package com.course.work.config;
 
-import com.course.work.token.TokenRepository;
+import com.course.work.repositoriy.TokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

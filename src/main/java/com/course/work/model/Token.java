@@ -1,13 +1,12 @@
-package com.course.work.token;
+package com.course.work.model;
 
-import com.course.work.user.User;
+import com.course.work.enums.TokenType;
+import com.course.work.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigInteger;
 
 @Data
 @Builder

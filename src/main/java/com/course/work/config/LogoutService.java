@@ -1,6 +1,6 @@
 package com.course.work.config;
 
-import com.course.work.token.TokenRepository;
+import com.course.work.repositoriy.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
